@@ -58,6 +58,23 @@ Em 1997 a Netscape contatou a Ecma, uma empresa para padronização de sistemas 
 Ajax, jQuery, CommonJs são tipo JavaScript para fora dos navegadores. 
 
 ## Cheats 
+Separa-se imagens de como vai ser a interface para visualizar melhor e não se perder.
+
+Duplica-se os textos que vão ser inseridos no site em html, e salva-se como 'txt', porque se der algum problema, pode-se recuperar por este arquivo depois, apenas retirando o txt. 
+
+Em alguns SOs, tipo o Linux, o sistema de arquivos é organizado diferente, então coloca-se _ antes das pastas para serem achadas mais facilmente, ou algum outro caractere especial. 
+
+Arquivos PNG são ligeiramente maiores que JPEG. É melhor a resolução. Gera maior tráfego de dados. 
+
+A opção `Salvar pra Web` em alguns programas, salva a imagem com um tamanho de arquivo menor.
+
+A barra de caminho é sempre inclinada pra direita, é de servidor. O Windows usa pra esquerda, mas o computador entende mesmo assim.
+
+Colocar sempre as imagens que vai utilizar na mesma pasta do html ou numa subpasta. Não em outro arquivo, nem caminhos absolutos (ex: C:// Meus documentos//)
+
+Tags que não existem, só serão ignorados.
+
+### CSS Cheats
 
 Para um código funcionar na maior parte dos navegadores, tem sites onde se cola o código específico de css e ele vai gerar para todos os navegadores:
 http://expressprefixr.herokuapp.com/
@@ -67,21 +84,16 @@ Porém não é tão necessário, já que hoje em dia a maioria já tem suporte.
 
 Site Google/fonts, é um repositório com várias fontes disponíveis para usar qualquer tipo de site. 
 
-Separa-se imagens de como vai ser a interface para visualizar melhor e não se perder.
+Quando se quer esconder algo do site para os usuários, coloca-se `display: none`, pois ainda vai ser achado pelos mecanismos de busca do google. 
 
-Duplica-se os textos que vão ser inseridos no site em html, e salva-se como 'txt', porque se der algum problema, pode-se recuperar por este arquivo depois, apenas retirando o txt. 
+Ao colocar um top de 0px, muitas vezes ainda vai ficar uma borda, pois dentro desse 0, por padrão, já tem uma margem dentro dele. Para eliminar todo o espaço, é necessário definir como `position: absolute;` e deixar um número negativo como top. 
 
-Em alguns SOs, tipo o Linux, o sistema de arquivos é organizado diferente, então coloca-se _ antes das pastas para serem achadas mais facilmente, ou algum outro caractere especial. 
+### Cores 
 
-Arquivos PNG são ligeiramente maiores que JPEG. É melhor a resolução. Gera maior tráfego de dados. 
-
-A opção Salvar pra Web em alguns programas, salva a imagem com um tamanho de arquivo menor.
-
-A barra de caminho é sempre inclinada pra direita, é de servidor. O Windows usa pra esquerda, mas o computador entende mesmo assim.
-
-Colocar sempre as imagens que vai utilizar na mesma pasta do html ou numa subpasta. Não em outro arquivo, nem caminhos absolutos (ex: C:// Meus documentos//)
-
-Tags que não existem, só serão ignorados.
+Sistema hexadecimal: `#000000` // Os dois primeiros dígitos são a quantidade de vermelho, depois de verde e depois de azul. 
+RGB: `rgb (35, 137, 195)`
+RGBA: `rgba (200, 093, 320, 0.5)` // Mesmo que RGB, mas o último dígito  é entre 0 e 1,  indicando a quantidade de transparência. 
+HSB: `hsl(165, 8%, 93%)` // Hue, Saturation and Bright ( Matiz, Saturação e Luminosidade). Esses dois últimos em porcentagem. Pode adicionar a transparência, só adicionando a no final e seu valor.  
 
 # Código 
 
@@ -91,6 +103,10 @@ Tags que não existem, só serão ignorados.
 `<html lang="pt-br">`: Para dizer o idioma do documento. É bom para o Google saber que idioma é o site. 
 
 `<meta charset="UTF-8">`: Para o padrão português: 
+
+Para chamar o arquivo de CSS: `<link rel="stylesheet" type"text/css" href="pasta/nomedoarquivo.css">`
+
+HREF: Hypertext Reference, quando vai chamar um arquivo de fora.
 
 `<head></head>`: Para estruturais comportamentais do site, como vai se comportar, como vai ser configurado, e coisas visuais. Casoo CSS será feito no mesmo arquivo, como é algo comportamental, devera ficar dentro do head. 
 
@@ -193,65 +209,43 @@ Pode-se criar listas dentro das listas, e com suas ordenações diferentes e tip
 
 ## CSS
 
-`<span>`:  Formatar pequenos pedaços de texto.
+É importante colocar `@charset"UTF-8"`.
+
+`<span>`:  Formatar pequenos pedaços de texto. É possível adicionar vários parâmetros no estilo. 
 
 Ex: 
 ``` 
-<span style="text-decoration: underline;"> 
+<span style="text-decoration: underline; text-indent: 50px;"> 
 ```
 
-Coloca-se none quando quer que uma determinada parte quer sem formatação, por exemplo, quando herda coisas.
-normal = sem formatação ou padrão. 
-Se quiser colocar mais coisas, só colocar mais coisas depois do ';'
+### Chamando class e id
 
-font-weight: = indicar a quantidade de negrito.
-style="text-align: center;"= formatação de textos,alinhar.
-text-indent: 50px; Indexação. 
+Quando for `class`, será pelo `nametag.nameclass`. 
+Quando for `id`, será pelo `#nameid`.
 
-A maioria das vezes é configurado pelo sistema hexadecimal #00 00 00 // Os dois primeiros dígitos são a quantidade de vermelho, depois de verde, e depois de azul. 
+`position:relative`:  Vai ficar relativa aonde foi colocada no html. 
 
-Pode-se representar pelo RGB também, os valores absolutos. 
-rgb(35, 137, 195) respectivamente.
-Ou com a função rgba, que é o mesmo que o rgb, mas o último dígito é entre 0 e 1 e é a quantidade de transparência. 
-Também tem HSB, Hue, Saturation and Bright, Matiz, saturação e luminosidade. Esses dois últimos em porcentagem. 
-hsl(165, 8%, 93%);, e pode adicionar a transparência, só adicionando a no final e seu valor.  
+`display:block`: Permite que seja colocado flutuando.
 
+Ex: 
+```
 body{
-background-color: red;
-background-image: url ("Nome da imagem"); //só assim já funciona, não precisa do caminho.   
-color: blue; //cor da fonte
+	background-color: red;
+	background-image: url ("Nome da imagem"); // só assim já funciona, não precisa do caminho.   
+	color: blue; //cor da fonte
 }
 
-Colocar @charset"UTF-8"; também.
-
-Para chamar o arquivo de CSS, no HTMl:
-<link rel="stylesheet" type"text/css" href="pasta/nomedoarquivo.css"> 
-href hypertext reference, quando vai chamar um arquivo de fora.
-
-Parametro class: nomedatag.nomedaclasse
-Criar primeiro dentro da tag figure e depois ir no CSS.
-
 figure.foto-legenda{
-border: 8px solid red;
-box-shadow: 1px 1px 4px black; /* sombra*/
-
+	border: 8px solid red;
+	box-shadow: 1px 1px 4px black; /* sombra*/
 }
 
 figure.foto-legenda img{ /* Tudo que for da imagem, vai ter essas bordas, ou seja, a borda vai cobrir os cantos 100%*/
 	width: 100%;
 	height: 100%;
 }
+```
 
-em position:relative, a classe em questão vai ficar relativa aonde foi colocada no html. 
-
-em display:block permite que seja colocado flutuando
-
-na posição absoluta, vai poder modificar o top e o left. Se colocar 0 px, não vai ficar grudado, pois o 0 já tem um padrão dentro dele de margem. Para ficar realmente colado, é necessário usar um número negativo (-10)
-
-quando se quer esconder algo do site para os usuários, coloca-se display: none, pois ainda vai ser achado pelos mecanismos de busca do google. 
-
-class = .nome
-id = #nomeid
 
 ## JavaScript
 
