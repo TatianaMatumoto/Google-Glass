@@ -70,6 +70,17 @@ Separa-se imagens de como vai ser a interface para visualizar melhor e não se p
 
 Duplica-se os textos que vão ser inseridos no site em html, e salva-se como 'txt', porque se der algum problema, pode-se recuperar por este arquivo depois, apenas retirando o txt. 
 
+Em alguns SOs, tipo o Linux, o sistema de arquivos é organizado diferente, então coloca-se _ antes das pastas para serem achadas mais facilmente, ou algum outro caractere especial. 
+
+Arquivos PNG são ligeiramente maiores que JPEG. É melhor a resolução. Gera maior tráfego de dados. 
+
+A opção Salvar pra Web em alguns programas, salva a imagem com um tamanho de arquivo menor.
+
+A barra de caminho é sempre inclinada pra direita, é de servidor. O Windows usa pra esquerda, mas o computador entende mesmo assim.
+
+Colocar sempre as imagens que vai utilizar na mesma pasta do html ou numa subpasta. Não em outro arquivo, nem caminhos absolutos (ex: C:// Meus documentos//)
+
+Tags que não existem, só serão ignorados.
 
 # Código 
 
@@ -107,93 +118,90 @@ Ex:
 
 Pode-se formatar no CSS para o h2 ficar maior, então não importa o tamanho, mas sim a hierarquia. 
 
+`<hgroup>`:  Para agrupar títulos. É apenas semântico.
 
+`<pre>`: Considerado como pré formatado, considerando os espaços e enters.  
+`<p>`: Paragráfos
+`<br/>`:  Break Row, para quebras de linha
+`&nbsp;`: Non Break Space, espaço em branco 
+`<wbs/>`: Word Breaker, para dividir as palavras quando se diminui a página. Caso não tenha a possibilidade de quebrar, ele não faz diferença alguma pro navegador. 
+`&shy;`:  Soft Hyphen, para adicionar hífens na quebra de palavras. 
 
-<p> Paragráfos
-<br/> break row, Para quebras de linha
-&nbsp; = Non break space, espaço em branco 
-<wbs/> word breaker, para dividir as palavras quando se diminui a página. Caso não tenha a possibilidade de quebrar, ele não faz diferença alguma pro navegador. 
+`<b>`: Bold, negrito
+`<i>`: Itálico
+`<em>`: Ênfase, tipo itálico, só que com significado semântico, usado para enfatizar o termo. 
 
-<hgroup> para agrupar títulos, não tem nenhum significado visualmente, é apenas semântico. 
+`<del>`: Efeito riscado, com efeito semântico.
+`<sup>`: Sobreescrito, em cima.
+`<sub>`: Subescrito, em baixo.
 
-Em alguns SOs, tipo o o linux, o sistema de arquivos é organizado diferente, então coloca-se '_" antes das pastas para serem achadas mais facilmente, ou algum outro caractere especial. 
+`<code>`: Formatar código, com significado sêmantico. 
 
-&shy; Soft Hyphen, para adicionar hífens na quebra de palavras. 
+`<figure>`: Imagens com significados semânticos, imagens que fazem parte de um conteúdo. 
+`<figcaption>`: Legenda da imagem. Pode ser texto e inclusive textos com tags.
 
-<b> bold, negrito
-<i> italico
-<em> ênfase, tipo itálico, só que com significado semântico, enfatizar o termo. 
-<del> é efeito riscado, com efeito semântico.
+`<nav>`: Tag especial que vai criar uma área de navegação.
 
-<sup> sobreescrito, em cima.
-<sub> subescrito, em baixo.
+### Listas 
+Existem dois tipos de lista:
 
-tags que não existem, só serão ignorados
-tag em html para formatar códigos <code>, tem significado sêmantico. 
-<pre> = considerado como pré formatado, considerando os espaços e enters.  
+### ol - Ordered lists
 
-Arquivos PNG são ligeiramente maiores que JPEG. É melhor resolução. Gera maior tráfego de dados. 
-
-A opção Salvar pra Web em alguns programas, salva a imagem com um tamanho de arquivo menor.
-
-a barra de caminho é sempre inclinada pra direita, é de servidor. O windows usa pra esquerda, mas o computador entende mesmo assim.
-
-Colocar sempre as imagens que vai utilizar na mesma pasta do html ou numa subpasta. Não em outro arquivo, nem caminhos absolutos (ex: C:// Meus documentos//)
-
-<figure> imagens com significados semânticos, imagens que fazem parte de um conteúdo 
-<figcaption> legenda da imagem. Pode ser texto e inclusive textos com tags.
-
-<nav> é uma tag especial que vai criar uma área de navegação 
-
-existem dois tipos de lista:
-ol - Ordered lists
-existem três tipos:
-<ol type="">
+```<ol type="">
 1 = númeração
 a = alfabeto
 A = alfabeto maisculo
 i = numeros romanos
 I = numeros romanos maisculos
+```
 
-o padrão é a numeração, tanto que não precisa se definir ela caso não queriam mudar.
+O padrão é a numeração, tanto que não precisa definir ela caso não queira mudar.
 
-pra começar de um determinado lugar, usa-se <ol type "a" start="3"
+`<ol type "a" start="3">`: Pra começar de um determinado número/letra. Só aceita valores númericos
 
-então a lista começa pelo número 3
+### ul - Unordered Lists
+Também chamado de lista com demarcadores.
 
-o start só aceita valores númericos
+```<ul type="">
+square
+circle
+disc
+```
 
-ul - Unordered lists
-ou lista com demarcadores.
-tem type square, circle ou disc.
+### li - List Itens
 
-nos dois tem: 
-li- list itens
+Pode-se criar listas dentro das listas, e com suas ordenações diferentes e tipos diferentes. 
 
-pode-se criar listas dentro das listas, e com suas ordenações diferentes e tipos diferentes. 
+### Link 
+`<a>`: Âncora. Base para a criação do link. 
 
-ancora = <a> 
-é a base para a criação do link
-<a href=""> = referencia em hypertexto, utilizar o http.
+`<a href="">`: Referencia em hypertexto, utilizar o HTTP.
 
-<a href="fhruhf" target="_blank"> = vai redirecionar para outra aba pro site. 
+`<a href="https://github.com/TatianaMatumoto" target="_blank">`: Irá redirecionar para outra aba no navegador.  
 
-pode utilizar _self pra abrir na mesma aba, mas já é paadrão, então não é muito necessário. 
+`<a href="https://github.com/TatianaMatumoto" target="_self">`: Padrão, irá abrir na mesma aba. 
 
-linha = table rows <tr>
-dentro de um tr(linha, tem-se table data = <td>
+### Tabelas 
+
+`<tr>`: Table Rows, linha.  Dentro dela, tem-se o td. 
+`<td>`: Table Data.
  
-rowspan quer dizer que uma linha vai ocupar mais espaço, e o número depois é o número de linhas. <td rowspan="2">
-do mesmo modo, cowspan é para colunas. -  
+`<td rowspan="2">`: Rowspan quer dizer que uma linha vai ocupar mais espaço, e o número é o número de linhas. 
 
+`<td cowspan="2">`> Cowspan, mesma coisa, porém para colunas. 
 
 ## CSS
-<span > tag para formatar pequenos pedaços de texto
+
+`<span>`:  Formatar pequenos pedaços de texto.
+
+Ex: 
+``` 
 <span style="text-decoration: underline;"> 
+```
+
 Coloca-se none quando quer que uma determinada parte quer sem formatação, por exemplo, quando herda coisas.
 normal = sem formatação ou padrão. 
 Se quiser colocar mais coisas, só colocar mais coisas depois do ';'
-
 
 font-weight: = indicar a quantidade de negrito.
 style="text-align: center;"= formatação de textos,alinhar.
@@ -248,7 +256,7 @@ id = #nomeid
 
 A ordem dos comandos é pela ordem das linhas do código. 
 
-Tudo tem que estar dentro da tag <script>
+Tudo tem que estar dentro da tag `<script>`.
 
 Essa linguagem é apenas para manipular o que estiver dentro do navegador, então ela não pode acessar o computador nem hardware. 
 
