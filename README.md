@@ -7,36 +7,56 @@ Projeto feito com base no curso do Guanabara (Curso de HTML5).
 
 Pequenas anotações feitas durante o curso. 
 
-## História 
+## Linguagens: 
 
-FTP: protocolo para transmissão de arquivos
-DNS: protocolo para identificação de máquinas na rede
+- HTML: semântico, tem significado
+- CSS: formatações
+- JavaScript: interatividade entre as páginas
 
-1972: criação do e-mail 
+# História 
 
-TCP: transfer control protocol, quebra os dados em pacotes. Mas não identifica as máquinas. (Por isso o IP)
+**FTP**: protocolo para transmissão de arquivos
+**DNS**: protocolo para identificação de máquinas na rede
 
-1990: criação do protocolo HTTP, de transferência de hipertextos (qualquer coisa multimídia) e o html, além do wolrdwide web (www)
+**1972**: criação do e-mail 
 
-1991: primeiro web site criado.
+**TCP**: transfer control protocol, quebra os dados em pacotes. Mas não identifica as máquinas. (Por isso o IP)
 
-HTML: semântico, tem significado
-CSS: formatações
-JavaScript: interatividade entre as páginas
+**1990**: criação do protocolo HTTP, de transferência de hipertextos (qualquer coisa multimídia) e o html, além do wolrdwide web (www)
 
-Sinal digital = binário 
-Ondas senoidais = sinal analógico (a maioria usa isso)
+**1991**: primeiro web site criado.
 
-Conversão da onda digital para uma onda analógica = modulação (para transmitir pelo meio de comunicação)
+## Sinais e modem 
 
-Para ser convertido de volta a onda digital, chama-se demodulação.
+**Sinal digital**: binário 
+**Ondas senoidais**: sinal analógico (a maioria usa isso)
+**Conversão da onda digital para uma onda analógica**: modulação (para transmitir pelo meio de comunicação)
+**Para ser convertido de volta a onda digital**:  demodulação.
 O modem faz os dois (Primeiros termos juntos)
 
-Datagramas = pequenos pacotes 
+**Datagramas**: pequenos pacotes 
 
-Modem vai direto no provedor de acesso. quando se conecta a internet,o computador recebe um IP, uma identificação, para qualquer meio de conexão com internet. ele vai pro DNS, que confere os sites pelo IP do servidor hospedado e transfere essa informação pro aparelho de comunicação. Arquivos (fotos, músicas, etc) ficam no servidor, que são transmitidos para a máquina. 
+Modem vai direto no provedor de acesso. Quando se conecta a internet, o computador recebe um IP (uma identificação), para qualquer meio de conexão com internet. Ele vai pro DNS, que confere os sites pelo IP do servidor hospedado e transfere essa informação pro aparelho de comunicação. 
+
+Arquivos (fotos, músicas, etc) ficam no servidor, que são transmitidos para a máquina. 
 
 Servidores DNS, servidores de nome de domínio. 
+
+### JavaScript
+
+Mudou muito de nome (Cmm(C--) 1992, ScriptEase, mocha, LiveScript, até que se juntou com a Sunmicrosystems (empresa do Java) e para atrair mais usuários, a nomearam de JavaScript (mas é tudo marketing). Era de uma pequena empresa a Nonbas, foi comprada pela OpenWave, mas foi comprada pela Netscape em 1995.  
+
+_Só que não tem nada a ver com a linguagem Java._ 
+
+As duas linguagens são baseadas em C (Clike)
+
+Em 1996 a Microsoft lançou o VBScript, mas rebatizou para JScript. 
+
+Em 1997 a Netscape contatou a Ecma, uma empresa para padronização de sistemas de informação, e especificou o C#. Então ela lançou o Ecma lançou o EcmaScript (2,5) versão padronizada pela Netscape. 
+
+Ajax, jQuery, CommonJs são tipo JavaScript para fora dos navegadores. 
+
+## Cheats 
 
 Para um código funcionar na maior parte dos navegadores, tem sites onde se cola o código específico de css e ele vai gerar para todos os navegadores:
 http://expressprefixr.herokuapp.com/
@@ -46,66 +66,57 @@ Porém não é tão necessário, já que hoje em dia a maioria já tem suporte.
 
 Site Google/fonts, é um repositório com várias fontes disponíveis para usar qualquer tipo de site. 
 
+Separa-se imagens de como vai ser a interface para visualizar melhor e não se perder.
 
------- JavaScript
-Mudou muito de nome (Cmm(C--) 1992, ScriptEase, mocha, LiveScript, até que se juntou com a Sunmicrosystems(empresa do Java) e para atrair mais usuários, a nomearam de JavaScript(mas é tudo marketing). Era de uma pequena empresa a Nonbas, foi comprada pela OpenWave, mas foi comprada pela Netscape em 1995.  
-
-Só que não tem nada a ver com a linguagem Java. 
-
-As duas linguagens são baseadas em C (Clike)
-
-Em 1996 a Microsoft lançou o VBScript, mas rebatizou para JScript. 
-
-Em 1997 a Netscape contatou a Ecma, uma empresa para padronização de sistemas de informação, e especificou o C#. Então ela lançou o Ecma lançou o EcmaScript(2,5) versão padronizada pela Netscape. 
-
-Ajax, jQuery, CommonJs são tipo JavaScript para fora dos navegadores. 
+Duplica-se os textos que vão ser inseridos no site em html, e salva-se como 'txt', porque se der algum problema, pode-se recuperar por este arquivo depois, apenas retirando o txt. 
 
 
-------------
+# Código 
 
-## Código 
+## HTML 
+ `<!DOCTYPE html>`: Para dizer para o navegador que o documento é em HTML5. 
 
-Para dizer para o navegador que o documento é em HTML5, usa-se <!DOCTYPE html>
+`<html lang="pt-br">`: Para dizer o idioma do documento. É bom para o Google saber que idioma é o site. 
 
-Para dizer o idioma do documento, é <html lang="pt-br">. É bom para o Google saber de que idioma é o site. 
+`<meta charset="UTF-8">`: Para o padrão português: 
 
-Para o padrão português: <meta charset="UTF-8"> 
+`<head></head>`: Para estruturais comportamentais do site, como vai se comportar, como vai ser configurado, e coisas visuais. Casoo CSS será feito no mesmo arquivo, como é algo comportamental, devera ficar dentro do head. 
 
-A área head é para estruturais comportamentais do site, como o site vai se comportar, como vai ser configurado, e coisas visuais. 
+Ex: 
+```
+<head>
+	<style> 
 
-<title>Nome da aba <\title>
+		h1 {
+			font-family: Arial; // tipo de fonte
+			font-size: 30pt;
+			color: blue;
+			text-shadow: 2px 2px 2px black; // o primeiro se refere ao deslocamento lateral (lado), o segundo é o deslocamento vertical (cima, baixo) e o último é o espaçamento das sombras (mais espalhada) 
+		}
+	</style>
+</head>
+```
 
-h1 e seus afinsé sobre hierarquia de títulos. 
-h1 para títulos,h2 para subtítulo de h1, h3 é subtítulo de h2, e assim vai. 
+`<title>Nome da aba <\title>`: É o nome da aba no navegador. 
+
+### Hierarquia de títulos 
+
+`<h1>`: Títulos
+`<h2>`: Subtítulo de H1
+`<h3>`: Subtítulo de H2
 
 Pode-se formatar no CSS para o h2 ficar maior, então não importa o tamanho, mas sim a hierarquia. 
 
-A formatação é no CSS e comportamental. Então é no head.
-
-<head>
-<style> 
-
-h1{
-font-family: Arial; (tipo de fonte)
-font-size:30pt;
-color: blue;
-text-shadow:2px 2px 2px black;(o primeiro se refere ao deslocamento lateral(lado), o segundo é o deslocamento verticl (cima, baixo) e o último é o espaçamento das sombras (mais espalhada) 
-}
-(tudo que estiver entre as chaves e é configuração do h1,todos são minusculos)
 
 
 <p> Paragráfos
 <br/> break row, Para quebras de linha
 &nbsp; = Non break space, espaço em branco 
-<wbs/> word breaker, para dividir as palavras quando se dminui a página. Caso não tenha a possibilidade de quebrar, ele nãofaz diferença alguma pro navegador. 
+<wbs/> word breaker, para dividir as palavras quando se diminui a página. Caso não tenha a possibilidade de quebrar, ele não faz diferença alguma pro navegador. 
 
 <hgroup> para agrupar títulos, não tem nenhum significado visualmente, é apenas semântico. 
 
 Em alguns SOs, tipo o o linux, o sistema de arquivos é organizado diferente, então coloca-se '_" antes das pastas para serem achadas mais facilmente, ou algum outro caractere especial. 
-
-Separa-se imagens de como vai ser a interface para visualizar melhor e não se perder.
-
-Duplica-se os textos que vão ser inseridos no site em html, e salva-se como 'txt', porque se der algum problema, pode-se recuperar por este arquivo depois, apenas retirando o txt. 
 
 &shy; Soft Hyphen, para adicionar hífens na quebra de palavras. 
 
@@ -127,7 +138,7 @@ A opção Salvar pra Web em alguns programas, salva a imagem com um tamanho de a
 
 a barra de caminho é sempre inclinada pra direita, é de servidor. O windows usa pra esquerda, mas o computador entende mesmo assim.
 
-Colocar sempre as imagens que vai utilizar na mesma pasta do html ou numa subpasta. Não em outro arquivo, nem caminhos absolutos (ex:C:// Meus documentos//)
+Colocar sempre as imagens que vai utilizar na mesma pasta do html ou numa subpasta. Não em outro arquivo, nem caminhos absolutos (ex: C:// Meus documentos//)
 
 <figure> imagens com significados semânticos, imagens que fazem parte de um conteúdo 
 <figcaption> legenda da imagem. Pode ser texto e inclusive textos com tags.
@@ -176,7 +187,7 @@ rowspan quer dizer que uma linha vai ocupar mais espaço, e o número depois é 
 do mesmo modo, cowspan é para colunas. -  
 
 
---------------- CSS
+## CSS
 <span > tag para formatar pequenos pedaços de texto
 <span style="text-decoration: underline;"> 
 Coloca-se none quando quer que uma determinada parte quer sem formatação, por exemplo, quando herda coisas.
@@ -233,11 +244,11 @@ quando se quer esconder algo do site para os usuários, coloca-se display: none,
 class = .nome
 id = #nomeid
 
--------- JavaScript
+## JavaScript
 
 A ordem dos comandos é pela ordem das linhas do código. 
 
-tudo tem que estar dentro da tag <script>
+Tudo tem que estar dentro da tag <script>
 
 Essa linguagem é apenas para manipular o que estiver dentro do navegador, então ela não pode acessar o computador nem hardware. 
 
