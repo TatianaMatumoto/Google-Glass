@@ -1,8 +1,9 @@
 # Google-Glass 👓
 Projeto feito com base no curso do Guanabara (Curso de HTML5).
 
+Ps: os arquivos `data_javascript.html, lampadaMelhor_javascript.html e lampada_javascript.html` também foram feitos durante o curso. 
+
 ⚠️ Atenção! Não sei por qual motivo ainda, as imagens do menu estão ficando sobrepostas no centro. ⚠️
-‼ Formatando o ReadMe ‼
 
 ## Anotações 
 
